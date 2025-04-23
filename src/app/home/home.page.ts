@@ -1,24 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/angular/standalone';
+import { Component } from '@angular/core';
+import { IonToolbar, IonHeader, IonTitle, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonButton, IonContent,} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
-import { ServiceService } from '../services/service.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CommonModule, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule, // For routerLink
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardContent,
+    IonButton,
+    IonContent,
+  ],
 })
-export class HomePage implements OnInit {
-  mySpace:any[] = [];
-  constructor(private ss:ServiceService) {}
+export class HomePage {
 
-  ngOnInit(): void {
-    this.ss.getServiceData().subscribe(
-      (data)=>{
-        this.mySpace = data.Search;
-      }
-
-    );
-  }
+ 
 }
+
+
+  

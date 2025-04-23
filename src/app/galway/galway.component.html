@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Galway Weather</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card *ngFor="let x of mySpace">
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{ x.text }}, {{ x.region }} ({{ x.temp }})
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="x.iconUrl" alt="x.icon" />
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

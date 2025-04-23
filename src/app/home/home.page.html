@@ -1,20 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Top 40 Movies Ever
-    </ion-title>
+    <ion-title>The Weather</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card *ngFor="let x of mySpace" style="text-align: center;">
-    <img src={{x.small}}/>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
     <ion-card-header>
-      <ion-card-title>{{x.wikipedia}}</ion-card-title>
-      <ion-card-subtitle>{{x.}}</ion-card-subtitle>
+      <ion-card-title>Weathers Around The World!!</ion-card-title>
     </ion-card-header>
-  
+
     <ion-card-content>
-     
-  
+      <ion-button expand="block" [routerLink]="['/galway']">Galway</ion-button>
+      <ion-button expand="block" [routerLink]="['/london']">London</ion-button>
+      <ion-button expand="block" [routerLink]="['/tokyo']">Tokyo</ion-button>
+      <ion-button expand="block" [routerLink]="['/newyork']">New York</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

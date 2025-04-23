@@ -9,6 +9,6 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
   getServiceData():Observable<any>{
-    return this.http.get("https://api.spacexdata.com/v5/launches/latest")
+    return this.http.get("http://api.weatherapi.com/v1/current.json?key=4eea242677da4642be1120416252304&q=Galway&aqi=yes");
   }
 }

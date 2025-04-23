@@ -10,4 +10,25 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'london',
+    loadComponent: () => import('./london/london.component').then((m) => m.LondonComponent),
+
+  },
+  {
+    path: 'tokyo',
+    loadComponent: () => import('./tokyo/tokyo.component').then((m) => m.TokyoComponent),
+  
+  },
+  {
+    path: 'galway',
+    loadComponent: () => import('./galway/galway.component').then((m) => m.GalwayComponent),
+    
+  
+  },
+  {
+    path: 'newyork',
+    loadComponent: () => import('./newyork/newyork.component').then((m) => m.NewyorkComponent),
+  }
+ 
 ];
