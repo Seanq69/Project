@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>The Weather</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,14 +7,26 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Weathers Around The World!!</ion-card-title>
+      <ion-card-title class="ion-text-center" style="font-size: 1.4rem;">
+        Weathers Around The World 🌍
+      </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-button expand="block" [routerLink]="['/galway']">Galway</ion-button>
-      <ion-button expand="block" [routerLink]="['/london']">London</ion-button>
-      <ion-button expand="block" [routerLink]="['/tokyo']">Tokyo</ion-button>
-      <ion-button expand="block" [routerLink]="['/newyork']">New York</ion-button>
+      <div class="ion-margin-top" style="display: flex; flex-direction: column; gap: 12px;">
+        <ion-button shape="round" expand="block" color="secondary" [routerLink]="['/galway']">
+          Galway
+        </ion-button>
+        <ion-button shape="round" expand="block" color="secondary" [routerLink]="['/london']">
+          London
+        </ion-button>
+        <ion-button shape="round" expand="block" color="secondary" [routerLink]="['/tokyo']">
+          Tokyo
+        </ion-button>
+        <ion-button shape="round" expand="block" color="secondary" [routerLink]="['/newyork']">
+          New York
+        </ion-button>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

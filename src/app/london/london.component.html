@@ -1,3 +1,34 @@
-<p>
-  london works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ mySpace[0]?.region }} Weather</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Show a loading message until data is available -->
+  <div *ngIf="mySpace.length === 0">
+    <p>Loading weather data...</p>
+  </div>
+
+  <!-- Iterate over the weather details if data is available -->
+  <ion-card *ngFor="let weather of mySpace">
+    <ion-card-header>
+      <ion-card-subtitle>{{ weather.region }}</ion-card-subtitle>
+      <ion-card-title>{{ weather.text }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Weather icon -->
+      <img [src]="'https:' + weather.icon" alt="weather icon" />
+      <p>Temperature: {{ weather.temp_c }} °C</p>
+      <p>Feels Like: {{ weather.feelslike_c }} °C</p>
+      <p>Humidity: {{ weather.humidity }} %</p>
+      <p>Pressure: {{ weather.pressure_mb }} mb</p>
+      <p>Wind Speed: {{ weather.wind_mph }} mph</p>
+      <p>Wind Gusts: {{ weather.gust_mph }} mph</p>
+      <p>UV Index: {{ weather.uv }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
